@@ -576,6 +576,43 @@
     <script>
         lucide.createIcons();
     </script>
+<!-- Disable Inspect, Right-Click & DevTools Shortcuts -->
+<script>
+    // 1. Right Click Disable
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    }, false);
+
+    // 2. Keyboard Shortcuts Disable (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U)
+    document.addEventListener('keydown', function (e) {
+        // Block F12
+        if (e.key === 'F12' || e.keyCode === 123) {
+            e.preventDefault();
+            return false;
+        }
+
+        // Block Ctrl + Shift + I (Inspect)
+        // Block Ctrl + Shift + J (Console)
+        // Block Ctrl + Shift + C (Element Inspector)
+        if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+            e.preventDefault();
+            return false;
+        }
+
+        // Block Ctrl + U (View Source)
+        if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+            e.preventDefault();
+            return false;
+        }
+
+        // Block Ctrl + S (Save Page)
+        if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+            e.preventDefault();
+            return false;
+        }
+    }, false);
+</script>
+    
 </body>
 </html>
 </body>
