@@ -1088,14 +1088,14 @@ footer {
    SCROLL ANIMATIONS & RESPONSIVE
 ====================================== */
 .reveal {
-    opacity: 0;
-    transform: translateY(25px);
+    opacity: 1 !important;
+    transform: none !important;
     transition: opacity .7s ease, transform .7s ease;
 }
 
 .reveal.active {
-    opacity: 1;
-    transform: none;
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 @media(max-width: 1000px) {
