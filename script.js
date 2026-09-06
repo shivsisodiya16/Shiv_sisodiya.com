@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Visual feedback on button
             if (langBtnText) {
-                langBtnText.textContent = currentLang === "en" ? "आ / A" : "A / आ";
+                langBtnText.textContent = currentLang === "en" ? "अ/A" : "A/अ";
             }
 
             // Translate all elements having data-en & data-hi attributes
