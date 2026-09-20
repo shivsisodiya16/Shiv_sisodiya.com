@@ -1084,15 +1084,18 @@ footer {
     font-size: 11px;
 }
 
+/* Icons ko ek line me barabar (horizontal) karne ke liye */
 .footer-socials {
-    display: flex;
-    flex-direction: column; /* Vertical alignment */
-    align-items: center;
-    gap: 12px;
+    display: flex !important;
+    flex-direction: row !important; /* Ek line me barabar */
+    align-items: center !important;
+    justify-content: flex-end; /* Right side me align */
+    gap: 12px !important;
+    margin-top: 10px;
 }
 
 .social-btn {
-    display: inline-flex;
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
     width: 44px;
@@ -1106,6 +1109,18 @@ footer {
 
 .social-btn:hover {
     transform: translateY(-3px);
+}
+
+/* WhatsApp Hover */
+.social-btn.whatsapp-btn:hover {
+    background: #25D366;
+    color: #ffffff;
+}
+
+/* LinkedIn Hover */
+.social-btn.linkedin-btn:hover {
+    background: #0077B5;
+    color: #ffffff;
 }
 @media(max-width: 1000px) {
     .nav-links { gap: 12px; }
