@@ -15,7 +15,28 @@
     --shadow: 0 18px 55px rgba(8, 35, 70, .08);
     --radius: 22px;
 }
+/* Text selection band karne ke liye */
+* {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
 
+/* Contact form me typing chalu rahe */
+input, textarea {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+}
+
+/* Agar koi Ctrl + P karke screenshot/print PDF save kare toh pura page blank dikhe */
+@media print {
+    body {
+        display: none !important;
+    }
+}
 * {
     margin: 0;
     padding: 0;
