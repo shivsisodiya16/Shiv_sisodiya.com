@@ -1084,85 +1084,28 @@ footer {
     font-size: 11px;
 }
 
-.social {
-    display: flex;
-    gap: 8px;
-}
-
-.social a {
-    width: 34px;
-    height: 34px;
-    border-radius: 9px;
-    background: rgba(255, 255, 255, .07);
-    display: grid;
-    place-items: center;
-    color: white;
-    transition: .3s;
-}
-
-.social a:hover {
-    background: #1769e0;
-    transform: translateY(-2px);
-}
-
-/* =====================================
-   SCROLL ANIMATIONS & RESPONSIVE
-====================================== */
-.reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.active {
-    opacity: 1 !important;
-    transform: none !important;
-}
-
-/* Floating Vertical Contact Bar on Screen Right */
 .footer-socials {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
     display: flex;
-    flex-direction: column; /* Ek ke niche ek vertical */
+    flex-direction: column; /* Vertical alignment */
+    align-items: center;
     gap: 12px;
-    z-index: 9999;
-    background: rgba(15, 23, 42, 0.75);
-    padding: 10px 8px;
-    border-radius: 30px;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .social-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     background: rgba(255, 255, 255, 0.08);
-    border-radius: 50%;
+    border-radius: 10px;
     color: #ffffff;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .social-btn:hover {
-    transform: scale(1.12);
-}
-
-/* Hover Colors */
-.social-btn.whatsapp-btn:hover {
-    background: #25D366;
-    color: #ffffff;
-}
-
-.social-btn.linkedin-btn:hover {
-    background: #0077B5;
-    color: #ffffff;
+    transform: translateY(-3px);
 }
 @media(max-width: 1000px) {
     .nav-links { gap: 12px; }
