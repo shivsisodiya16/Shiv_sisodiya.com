@@ -612,6 +612,52 @@
         }
     }, false);
 </script>
+
+<script>
+
+    // 1. Copy, Cut aur Text Selection drag block
+document.addEventListener('copy', function (e) {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        return false;
+    }
+});
+
+document.addEventListener('cut', function (e) {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        return false;
+    }
+});
+
+document.addEventListener('selectstart', function (e) {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// 2. PrintScreen (PrtScn) key intercept aur clipboard clear
+window.addEventListener('keyup', function (e) {
+    if (e.key === 'PrintScreen' || e.keyCode === 44) {
+        // Clipboard me blank space bhej kar screenshot override karna
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText('');
+        }
+        alert('Screenshots are disabled on this portfolio.');
+    }
+});
+
+// 3. User jab bhi screen capture ya tab switch kare to screen blur karna
+window.addEventListener('blur', function () {
+    document.body.style.filter = 'blur(15px)';
+});
+
+window.addEventListener('focus', function () {
+    document.body.style.filter = 'none';
+});
+</script>
+
     
 </body>
 </html>
