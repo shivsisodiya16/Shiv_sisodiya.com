@@ -87,3 +87,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+function downloadMyCV() {
+    const fileUrl = 'cv.pdf';
+    const fileName = 'Shiv_Pratap_CV.pdf';
+
+    fetch(fileUrl)
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.blob();
+        })
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            a.remove();
+        })
+        .catch(err => {
+            // Agar browser fetch block kare toh standard fallback
+            window.open(fileUrl, '_blank');
+        });
+}
